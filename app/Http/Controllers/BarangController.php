@@ -22,21 +22,23 @@ class BarangController extends Controller
             $search = $request->search;
             $query->where(function ($q) use ($search) {
                 $q->where('nama', 'like', '%' . $search . '%')
-                    ->orWhere('id_barang', 'like', '%' . $search . '%');
+                    ->orWhere('id_barang', 'like', '%' . $search . '%')
+                    ->orWhereHas('kategori', function ($k) use ($search) {
+                        $k->where('nama', 'like', '%' . $search . '%');
+                    });
             });
         }
         $total = Barang::count();
         $barang = $query->paginate(6)->withQueryString();
         $kategori = Kategori::all();
 
-        return view('barang', compact('barang', 'kategori', 'total'));
+        return view('pages.barang', compact('barang', 'kategori', 'total'));
     }
-
 
     public function show($id)
     {
         $barang = Barang::with(['kategori', 'pemasok'])->findOrFail($id);
-        return view('barangDetail', compact('barang'));
+        return view('details.barangDetail', compact('barang'));
     }
 
     public function create()
@@ -66,13 +68,6 @@ class BarangController extends Controller
         $barang = Barang::findOrFail($id);
         $data = $request->all();
 
-        if ($request->hasFile('path_image')) {
-            if ($barang->path_image) {
-                Storage::disk('public')->delete($barang->path_image);
-            }
-            $data['path_image'] = $request->file('path_image')->store('barang', 'public');
-        }
-
         $barang->update($data);
 
         return redirect()->route('barang.index')->with('success', 'Barang berhasil diperbarui.');
@@ -83,6 +78,6 @@ class BarangController extends Controller
         $barang = Barang::findOrFail($id);
         $barang->delete();
 
-        return redirect()->route('barang.index')->with('success', 'Barang berhasil dihapus.');
+        return redirect()->back()->with('success', 'Barang berhasil dihapus.');
     }
 }

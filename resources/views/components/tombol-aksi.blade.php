@@ -1,13 +1,12 @@
 @props(['show' => null, 'edit' => null, 'delete' => null])
 
-<div class="px-5 py-5 border-t border-gray-200 dark:border-gray-800">
+<div class="px-5 py-5 border-t border-gray-200 bg-gray-100/30 dark:border-gray-800 dark:bg-gray-900">
     <div class="flex items-center gap-2">
-        {{-- Tombol Detail --}}
         @if ($show)
             <a href="{{ $show }}"
                 class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-1.5 text-sm font-medium rounded-lg 
-                   bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 
-                   hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                   bg-white border border-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 
+                   hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -19,7 +18,6 @@
             </a>
         @endif
 
-        {{-- Tombol Edit --}}
         @if ($edit)
             <a href="{{ $edit }}"
                 class="inline-flex items-center justify-center p-2 rounded-lg 
@@ -34,7 +32,6 @@
             </a>
         @endif
 
-        {{-- Tombol Hapus --}}
         @if ($delete)
             <form action="{{ $delete }}" method="POST"
                 onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="inline-block">

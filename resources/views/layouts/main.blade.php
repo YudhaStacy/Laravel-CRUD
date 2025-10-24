@@ -17,24 +17,24 @@
     </style>
 </head>
 
-<body class="bg-white dark:bg-[#05060b] text-gray-900 dark:text-white">
+<body class="bg-[#fafafa] dark:bg-[#05060b] text-gray-900 dark:text-white">
     @include('partials.navbar')
 
     @if (session('success'))
         <div id="toast-success"
-            class="fixed top-5 right-5 z-50 translate-x-20 opacity-0 
-               transition-all duration-500 ease-out">
+            class="fixed top-5 right-5 z-50 translate-x-20 opacity-1 transition-all duration-500 ease-out">
             <div
-                class="flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg 
-                    bg-green-500 text-white border border-green-400">
+                class="flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg 
+            bg-green-600 dark:bg-green-900 text-white border border-green-400 dark:border-green-700">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>{{ session('success') }}</span>
+                <span class="text-sm">Data Berhasil Di Hapus</span>
             </div>
         </div>
     @endif
+
 
     <main class="pt-32 pb-16 px-6">
         <div class="max-w-4xl mx-auto">

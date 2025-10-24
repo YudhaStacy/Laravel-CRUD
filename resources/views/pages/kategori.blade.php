@@ -7,11 +7,11 @@
                 <h2 class="text-3xl font-bold mb-1">Daftar Kategori</h2>
                 <p class="text-sm text-gray-600 dark:text-gray-400">{{ $total }} kategori tersedia</p>
             </div>
-            <div class="flex gap-3 items-center">
+            <div class="md:flex gap-3 items-center">
                 <form method="GET" action="{{ route('kategori.index') }}" class="relative">
                     <input type="text" id="search" name="search" value="{{ request('search') }}"
                         placeholder="Cari kategori..."
-                        class="w-64 px-4 py-2 text-sm rounded-lg border border-gray-300 dark:border-gray-700 
+                        class="w-full md:w-64 px-4 py-2 text-sm rounded-lg border border-gray-300 dark:border-gray-700 
                    bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 
                    placeholder-gray-400 dark:placeholder-gray-500 
                    focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 transition">
@@ -50,8 +50,8 @@
                                     </p>
                                 </div>
                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="size-5 text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    class="size-4 text-gray-400 dark:text-gray-500  transition-colors" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5l7 7-7 7" />
                                 </svg>
@@ -63,5 +63,5 @@
             </div>
         @endforeach
     </div>
-    <x-pagination :data="$kategori" />
+    <div class="mt-12">{{ $kategori->links('vendor.pagination.tailwind') }}</div>
 @endsection

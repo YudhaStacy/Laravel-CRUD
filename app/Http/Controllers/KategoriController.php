@@ -17,17 +17,17 @@ class KategoriController extends Controller
             $query->where('nama', 'like', '%' . $search . '%');
         }
 
-        $kategori = $query->paginate(12);
+        $kategori = $query->paginate(6);
         $total = Kategori::count();
 
-        return view('kategori', compact('kategori', 'total'));
+        return view('pages.kategori', compact('kategori', 'total'));
     }
 
     public function show($id)
     {
         $kategori = Kategori::withCount('barang')->findOrFail($id);
 
-        return view('kategoriDetail', compact('kategori'));
+        return view('details.kategoriDetail', compact('kategori'));
     }
 
     public function create() {}
@@ -41,6 +41,6 @@ class KategoriController extends Controller
 
         $kategori->delete();
 
-        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil dihapus.');
+        return redirect()->back()->with('success', 'Kategori berhasil dihapus.');
     }
 }

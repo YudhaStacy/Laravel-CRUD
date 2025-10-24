@@ -95,7 +95,7 @@
             </div>
         @endforeach
     </div>
-    <x-pagination :data="$barang" />
+    <div class="mt-12">{{ $barang->links('vendor.pagination.tailwind') }}</div>
 @endsection
 
 @push('scripts')
