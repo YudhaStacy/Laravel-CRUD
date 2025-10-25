@@ -34,7 +34,7 @@ class KategoriSeeder extends Seeder
         // ]);
 
         $faker = Faker::create('id_ID');
-        // 
+
         for ($i = 0; $i < 10; $i++) {
             Kategori::create([
                 'nama' => ucfirst($faker->unique()->word()),

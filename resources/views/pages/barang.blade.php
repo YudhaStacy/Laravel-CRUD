@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Barang')
+
 @section('content')
     <div class="mb-8">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
@@ -44,7 +46,7 @@
                     <input type="hidden" name="kategori" value="{{ request('kategori') }}">
                     <input type="text" id="search" name="search" value="{{ request('search') }}"
                         placeholder="Cari barang..."
-                        class="w-64 px-4 py-2 text-sm rounded-lg border border-gray-300 dark:border-gray-700 
+                        class="w-full md:w-64 px-4 py-2 text-sm rounded-lg border border-gray-300 dark:border-gray-700 
                    bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 
                    placeholder-gray-400 dark:placeholder-gray-500 
                    focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 transition">
@@ -84,7 +86,7 @@
                                     <p class="text-md font-bold text-gray-900 dark:text-gray-100">
                                         Rp {{ number_format($b->harga, 0, ',', '.') }}
                                     </p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Stok: {{ $b->stok }} unit
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Stok: {{ $b->stok }}
                                     </p>
                                 </div>
                             </div>

@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Pemasok')
+
 @section('content')
     <div class="mb-8">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">

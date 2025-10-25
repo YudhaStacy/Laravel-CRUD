@@ -30,10 +30,35 @@ class KategoriController extends Controller
         return view('details.kategoriDetail', compact('kategori'));
     }
 
-    public function create() {}
-    public function store() {}
-    public function edit() {}
-    public function update() {}
+    public function create()
+    {
+        return view('form.kategoriForm');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        Kategori::create($data);
+
+        return redirect()->route('kategori.index')->with('success', 'Data berhasil ditambahkan');
+    }
+
+
+    public function edit(string $id)
+    {
+        $kategori = Kategori::findOrFail($id);
+        return view('form.kategoriForm', compact('kategori'));
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $kategori = Kategori::findOrFail($id);
+        $data = $request->all();
+
+        $kategori->update($data);
+
+        return redirect()->route('kategori.index')->with('success', 'Data berhasil diupdate');
+    }
 
     public function destroy($id)
     {

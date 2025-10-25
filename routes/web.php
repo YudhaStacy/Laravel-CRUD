@@ -12,7 +12,7 @@ Route::get('/', function () {
 Route::prefix('barang')->group(function () {
     Route::get('/', [BarangController::class, 'index'])->name('barang.index');
     Route::get('/create', [BarangController::class, 'create'])->name('barang.form');
-    Route::post('/', [BarangController::class, 'store'])->name('barang.store');
+    Route::post('/store', [BarangController::class, 'store'])->name('barang.store');
     Route::get('/{id}', [BarangController::class, 'show'])->name('barang.show');
     Route::get('/edit/{id}', [BarangController::class, 'edit'])->name('barang.edit');
     Route::put('/{id}', [BarangController::class, 'update'])->name('barang.update');
@@ -22,7 +22,7 @@ Route::prefix('barang')->group(function () {
 Route::prefix('kategori')->group(function () {
     Route::get('/', [KategoriController::class, 'index'])->name('kategori.index');
     Route::get('/create', [KategoriController::class, 'create'])->name('kategori.form');
-    Route::post('/', [KategoriController::class, 'store'])->name('kategori.store');
+    Route::post('/store', [KategoriController::class, 'store'])->name('kategori.store');
     Route::get('/{id}', [KategoriController::class, 'show'])->name('kategori.show');
     Route::get('/edit/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
     Route::put('/{id}', [KategoriController::class, 'update'])->name('kategori.update');
@@ -32,7 +32,7 @@ Route::prefix('kategori')->group(function () {
 Route::prefix('pemasok')->group(function () {
     Route::get('/', [PemasokController::class, 'index'])->name('pemasok.index');
     Route::get('/create', [PemasokController::class, 'create'])->name('pemasok.form');
-    Route::post('/', [PemasokController::class, 'store'])->name('pemasok.store');
+    Route::post('/store', [PemasokController::class, 'store'])->name('pemasok.store');
     Route::get('/{id}', [PemasokController::class, 'show'])->name('pemasok.show');
     Route::get('/edit/{id}', [PemasokController::class, 'edit'])->name('pemasok.edit');
     Route::put('/{id}', [PemasokController::class, 'update'])->name('pemasok.update');

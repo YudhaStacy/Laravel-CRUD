@@ -68,7 +68,7 @@
                             Harga
                         </label>
                         <p class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                            {{ $barang->harga }}
+                            Rp {{ number_format($barang->harga, 0, ',', '.') }}
                         </p>
                     </div>
                     <div>
