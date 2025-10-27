@@ -1,11 +1,11 @@
-@props(['show' => null, 'edit' => null, 'delete' => null])
+@props(['show' => null, 'edit' => null, 'delete' => null, 'id' => null])
 
 <div class="px-5 py-5 border-t border-gray-200 bg-gray-100/30 dark:border-gray-800 dark:bg-gray-900">
     <div class="flex items-center gap-2">
         @if ($show)
             <a href="{{ $show }}"
-                class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-1.5 text-sm font-medium rounded-lg 
-                   bg-white border border-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 
+                class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-1.5 text-sm font-medium rounded-lg
+                   bg-white border border-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300
                    hover:bg-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -20,8 +20,8 @@
 
         @if ($edit)
             <a href="{{ $edit }}"
-                class="inline-flex items-center justify-center p-2 rounded-lg 
-                   bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 
+                class="inline-flex items-center justify-center p-2 rounded-lg
+                   bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400
                    hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors"
                 title="Edit">
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24"
@@ -33,9 +33,9 @@
         @endif
 
         @if ($delete)
-            <button command="show-modal" commandfor="dialog"
-                class="inline-flex items-center justify-center p-2 rounded-lg 
-                       bg-red-100 border border-red-200 dark:bg-red-900/30 dark:border-red-900/50 text-red-600 dark:text-red-400 
+            <button command="show-modal" commandfor="dialog-{{ $id }}"
+                class="inline-flex items-center justify-center p-2 rounded-lg
+                       bg-red-100 border border-red-200 dark:bg-red-900/30 dark:border-red-900/50 text-red-600 dark:text-red-400
                        hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors cursor-pointer"><svg
                     xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -47,7 +47,7 @@
 </div>
 
 <el-dialog>
-    <dialog id="dialog" aria-labelledby="dialog-title"
+    <dialog id="dialog-{{ $id }}" aria-labelledby="dialog-title"
         class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
         <el-dialog-backdrop
             class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in dark:bg-gray-900/50"></el-dialog-backdrop>

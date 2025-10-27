@@ -127,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                    <x-tombol-aksi :show="route('barang.show', $b->id_barang)" :edit="route('barang.edit', $b->id_barang)" :delete="route('barang.destroy', $b->id_barang)" />
+                    <x-tombol-aksi :id="$b->id_barang" :show="route('barang.show', $b->id_barang)" :edit="route('barang.edit', $b->id_barang)" :delete="route('barang.destroy', $b->id_barang)" />
                 </div>
             </div>
         @endforeach

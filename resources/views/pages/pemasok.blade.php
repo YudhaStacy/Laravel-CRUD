@@ -1,6 +1,5 @@
 @extends('layouts.main')
 
-@section('title', 'Pemasok')
 
 @section('content')
     <div class="mb-8">
@@ -68,19 +67,22 @@
                     <div
                         class="absolute bottom-0 right-0 w-full pointer-events-none h-1/2 bg-linear-to-tl from-gray-300/20 dark:from-gray-700/20 via-transparent to-transparent rounded-tr-2xl">
                     </div>
-                    <div class="block p-5">
-                        <div class="gap-2.5">
-                            <h1 class="font-semibold text-xl mb-3 line-clamp-2 text-gray-900 dark:text-gray-100">
-                                {{ $p->nama }}
-                            </h1>
-                            <div class="flex items-center justify-between">
+                    <div class="gap-2.5 p-5">
+                        <h1 class="font-semibold text-xl mb-3 line-clamp-2 text-gray-900 dark:text-gray-100">
+                            {{ $p->nama }}
+                        </h1>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+
                                 <p class="text-sm text-gray-600 dark:text-gray-400">
                                     {{ $p->alamat }}
                                 </p>
                             </div>
+
                         </div>
                     </div>
-                    <x-tombol-aksi :show="route('pemasok.show', $p->id_pemasok)" :edit="route('pemasok.edit', $p->id_pemasok)" :delete="route('pemasok.destroy', $p->id_pemasok)" />
+                    </a>
+                    <x-tombol-aksi :id="$p->id_pemasok" :show="route('pemasok.show', $p->id_pemasok)" :edit="route('pemasok.edit', $p->id_pemasok)" :delete="route('pemasok.destroy', $p->id_pemasok)" />
                 </div>
             </div>
         @endforeach

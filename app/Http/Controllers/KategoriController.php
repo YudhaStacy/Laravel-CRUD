@@ -65,5 +65,7 @@ class KategoriController extends Controller
         $kategori = Kategori::findOrFail($id);
 
         $kategori->delete($id);
+
+        return redirect()->back()->with('success', 'Data berhaisl diahapus');
     }
 }

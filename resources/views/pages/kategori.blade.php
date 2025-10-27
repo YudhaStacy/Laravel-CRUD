@@ -93,7 +93,7 @@
                             </div>
                         </div>
                     </a>
-                    <x-tombol-aksi :show="route('kategori.show', $k->id_kategori)" :edit="route('kategori.edit', $k->id_kategori)" :delete="route('kategori.destroy', $k->id_kategori)" />
+                    <x-tombol-aksi :id="$k->id_kategori" :show="route('kategori.show', $k->id_kategori)" :edit="route('kategori.edit', $k->id_kategori)" :delete="route('kategori.destroy', $k->id_kategori)" />
                 </div>
             </div>
         @endforeach
