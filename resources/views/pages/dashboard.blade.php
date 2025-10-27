@@ -1,21 +1,17 @@
 @extends('layouts.main', ['withNavbar' => false])
 
 @section('content')
-    <!-- Page Header -->
     <section class="mb-8">
         <h1 class="mb-2 text-3xl font-semibold">Dashboard</h1>
         <p class="text-sm text-gray-600 dark:text-gray-400">Ringkasan data dan navigasi menu</p>
     </section>
 
-    <!-- Stats Grid -->
     <section class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-        <!-- Card Barang -->
         <a href="{{ route('barang.index') }}" class="group relative">
             <div
                 class="overflow-hidden rounded-xl bg-white dark:bg-gray-900/70 border border-gray-200 dark:border-gray-800 p-6 transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02] group-hover:border-blue-300 dark:group-hover:border-blue-700">
 
-                <!-- Icon -->
                 <div class="mb-4 inline-flex p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30">
                     <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
@@ -24,13 +20,11 @@
                     </svg>
                 </div>
 
-                <!-- Content -->
                 <div class="mb-2">
                     <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Total Barang</h3>
                     <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ $totalBarang ?? 24 }}</p>
                 </div>
 
-                <!-- Detail -->
                 <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
                     <span class="text-xs text-gray-500 dark:text-gray-400">Lihat semua</span>
                     <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
@@ -41,12 +35,10 @@
             </div>
         </a>
 
-        <!-- Card Kategori -->
         <a href="{{ route('kategori.index') }}" class="group relative">
             <div
                 class="overflow-hidden rounded-xl bg-white dark:bg-gray-900/70 border border-gray-200 dark:border-gray-800 p-6 transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02] group-hover:border-green-300 dark:group-hover:border-green-700">
 
-                <!-- Icon -->
                 <div class="mb-4 inline-flex p-3 rounded-lg bg-green-100 dark:bg-green-900/30">
                     <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
@@ -56,13 +48,11 @@
                     </svg>
                 </div>
 
-                <!-- Content -->
                 <div class="mb-2">
                     <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Total Kategori</h3>
                     <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ $totalKategori ?? 8 }}</p>
                 </div>
 
-                <!-- Detail -->
                 <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
                     <span class="text-xs text-gray-500 dark:text-gray-400">Lihat semua</span>
                     <svg class="w-4 h-4 text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors"
@@ -73,12 +63,10 @@
             </div>
         </a>
 
-        <!-- Card Pemasok -->
         <a href="{{ route('pemasok.index') }}" class="group relative">
             <div
                 class="overflow-hidden rounded-xl bg-white dark:bg-gray-900/70 border border-gray-200 dark:border-gray-800 p-6 transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02] group-hover:border-purple-300 dark:group-hover:border-purple-700">
 
-                <!-- Icon -->
                 <div class="mb-4 inline-flex p-3 rounded-lg bg-purple-100 dark:bg-purple-900/30">
                     <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
@@ -88,13 +76,11 @@
                     </svg>
                 </div>
 
-                <!-- Content -->
                 <div class="mb-2">
                     <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Total Pemasok</h3>
                     <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ $totalPemasok ?? 12 }}</p>
                 </div>
 
-                <!-- Detail -->
                 <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
                     <span class="text-xs text-gray-500 dark:text-gray-400">Lihat semua</span>
                     <svg class="w-4 h-4 text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"
@@ -107,7 +93,6 @@
 
     </section>
 
-    <!-- Quick Actions -->
     <section class="mt-8">
         <h2 class="mb-4 text-xl font-semibold">Quick Actions</h2>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

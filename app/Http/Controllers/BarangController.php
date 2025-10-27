@@ -27,8 +27,10 @@ class BarangController extends Controller
                     });
             });
         }
+
+        $perPage = $request->get('per_page', 6);
         $total = Barang::count();
-        $barang = $query->paginate(6)->withQueryString();
+        $barang = $query->paginate($perPage)->withQueryString();
         $kategori = Kategori::all();
 
         return view('pages.barang', compact('barang', 'kategori', 'total'));

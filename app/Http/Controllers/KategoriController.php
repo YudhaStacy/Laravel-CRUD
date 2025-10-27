@@ -16,7 +16,8 @@ class KategoriController extends Controller
             $query->where('nama', 'like', '%' . $search . '%');
         }
 
-        $kategori = $query->paginate(6);
+        $perPage = $request->get('per_page', 6);
+        $kategori = $query->paginate($perPage);
         $total = Kategori::count();
 
         return view('pages.kategori', compact('kategori', 'total'));

@@ -16,7 +16,8 @@ class PemasokController extends Controller
             $query->where('nama', 'like', '%' . $search . '%');
         }
 
-        $pemasok = $query->paginate(6);
+        $perPage = $request->get('per_page', 6);
+        $pemasok = $query->paginate($perPage);
         $total = Pemasok::count();
 
         return view('pages.pemasok', compact('pemasok', 'total'));

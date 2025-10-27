@@ -13,6 +13,41 @@
                 <el-dropdown class="inline-block">
                     <button
                         class="inline-flex w-full justify-center gap-x-1.5 rounded-lg bg-white dark:bg-gray-900
+       border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium
+       text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        Tampilkan {{ request('per_page', 6) }} Data
+                        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                            class="-mr-1 size-5 text-gray-500 dark:text-gray-400">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                        </svg>
+                    </button>
+
+                    <el-menu anchor="bottom end" popover
+                        class="origin-top-right rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
+       shadow-lg transition data-closed:scale-95 data-closed:opacity-0 data-enter:duration-100 data-leave:duration-75">
+                        <div class="py-1">
+                            @foreach ([6, 24, 48, 100] as $limit)
+                                <a href="{{ route(
+                                    'barang.index',
+                                    array_filter([
+                                        'kategori' => request('kategori'),
+                                        'search' => request('search'),
+                                        'per_page' => $limit,
+                                    ]),
+                                ) }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800
+                   rounded-md transition-colors {{ request('per_page', 6) == $limit ? 'bg-gray-100 dark:bg-gray-800 font-semibold' : '' }}">
+                                    {{ $limit }} data
+                                </a>
+                            @endforeach
+                        </div>
+                    </el-menu>
+                </el-dropdown>
+
+                <el-dropdown class="inline-block">
+                    <button
+                        class="inline-flex w-full justify-center gap-x-1.5 rounded-lg bg-white dark:bg-gray-900
                    border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium
                    text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                         {{ request('kategori') ? $kategori->firstWhere('id_kategori', request('kategori'))->nama : 'Semua Kategori' }}
