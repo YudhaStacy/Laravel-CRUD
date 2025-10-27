@@ -46,7 +46,7 @@ class BarangController extends Controller
     {
         $kategori = Kategori::all();
         $pemasok = Pemasok::all();
-        return view('form.barangForm', compact('kategori', 'pemasok'));
+        return view('forms.barangForm', compact('kategori', 'pemasok'));
     }
 
     public function store(Request $request)
@@ -61,7 +61,7 @@ class BarangController extends Controller
         $barang = Barang::findOrFail($id);
         $kategori = Kategori::all();
         $pemasok = Pemasok::all();
-        return view('form.barangForm', compact('barang', 'kategori', 'pemasok'));
+        return view('forms.barangForm', compact('barang', 'kategori', 'pemasok'));
     }
 
     public function update(Request $request, string $id)

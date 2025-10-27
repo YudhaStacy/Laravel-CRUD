@@ -32,7 +32,7 @@ class KategoriController extends Controller
 
     public function create()
     {
-        return view('form.kategoriForm');
+        return view('forms.kategoriForm');
     }
 
     public function store(Request $request)
@@ -47,7 +47,7 @@ class KategoriController extends Controller
     public function edit(string $id)
     {
         $kategori = Kategori::findOrFail($id);
-        return view('form.kategoriForm', compact('kategori'));
+        return view('forms.kategoriForm', compact('kategori'));
     }
 
     public function update(Request $request, string $id)

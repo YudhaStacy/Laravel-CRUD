@@ -43,7 +43,7 @@
     <button onclick="toggleDarkMode()"
         class="fixed bottom-5 right-5 z-50 p-3 rounded-full shadow-lg bg-white dark:bg-gray-800
            border border-gray-300 dark:border-gray-700 hover:scale-105 hover:shadow-xl
-           transition-all duration-300 ease-out">
+           transition-all duration-300 ease-out cursor-pointer">
         <svg id="icon-light" class="w-5 h-5 text-black dark:hidden" xmlns="http://www.w3.org/2000/svg" width="20"
             height="20" viewBox="0 0 20 20">
             <path fill="currentColor" fill-rule="evenodd"

@@ -31,7 +31,7 @@ class PemasokController extends Controller
 
     public function create()
     {
-        return view('form.pemasokForm');
+        return view('forms.pemasokForm');
     }
 
     public function store(Request $request)
@@ -45,7 +45,7 @@ class PemasokController extends Controller
     public function edit(string $id)
     {
         $pemasok = Pemasok::findOrFail($id);
-        return view('form.pemasokForm', compact('pemasok'));
+        return view('forms.pemasokForm', compact('pemasok'));
     }
 
     public function update(Request $request, string $id)
