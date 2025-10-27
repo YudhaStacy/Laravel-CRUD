@@ -1,5 +1,6 @@
 @extends('layouts.main')
 
+@section('title', 'Pemasok')
 
 @section('content')
     <div class="mb-8">
@@ -72,16 +73,13 @@
                             {{ $p->nama }}
                         </h1>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-
+                            <div class="flex items-center gap-2">
                                 <p class="text-sm text-gray-600 dark:text-gray-400">
                                     {{ $p->alamat }}
                                 </p>
                             </div>
-
                         </div>
                     </div>
-                    </a>
                     <x-tombol-aksi :id="$p->id_pemasok" :show="route('pemasok.show', $p->id_pemasok)" :edit="route('pemasok.edit', $p->id_pemasok)" :delete="route('pemasok.destroy', $p->id_pemasok)" />
                 </div>
             </div>

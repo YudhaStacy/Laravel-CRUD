@@ -49,23 +49,23 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
+                            No Telepon
+                        </label>
+                        <p class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                            {{ $pemasok->no_tlp }}
+                        </p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
                             Alamat
                         </label>
                         <p class="text-lg font-semibold text-gray-900 dark:text-gray-100">
                             {{ $pemasok->alamat }}
                         </p>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
-                            No telepon
-                        </label>
-                        <p class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                            {{ $pemasok->no_tlp }}
-                        </p>
-                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection
