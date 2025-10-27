@@ -12,8 +12,8 @@
             <div class="flex gap-3 items-center">
                 <el-dropdown class="inline-block">
                     <button
-                        class="inline-flex w-full justify-center gap-x-1.5 rounded-lg bg-white dark:bg-gray-900 
-                   border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium 
+                        class="inline-flex w-full justify-center gap-x-1.5 rounded-lg bg-white dark:bg-gray-900
+                   border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium
                    text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                         {{ request('kategori') ? $kategori->firstWhere('id_kategori', request('kategori'))->nama : 'Semua Kategori' }}
                         <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
@@ -24,7 +24,7 @@
                     </button>
 
                     <el-menu anchor="bottom end" popover
-                        class=" origin-top-right rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
+                        class=" origin-top-right rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
                    shadow-lg transition data-closed:scale-95 data-closed:opacity-0 data-enter:duration-100 data-leave:duration-75">
                         <div class="py-1">
                             <a href="{{ route('barang.index', array_filter(['search' => request('search')])) }}"
@@ -33,7 +33,7 @@
                             </a>
                             @foreach ($kategori as $k)
                                 <a href="{{ route('barang.index', array_filter(['kategori' => $k->id_kategori, 'search' => request('search')])) }}"
-                                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 
+                                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800
                                rounded-md transition-colors {{ request('kategori') == $k->id_kategori ? 'bg-gray-100 dark:bg-gray-800 font-semibold' : '' }}">
                                     {{ $k->nama }}
                                 </a>
@@ -46,9 +46,9 @@
                     <input type="hidden" name="kategori" value="{{ request('kategori') }}">
                     <input type="text" id="search" name="search" value="{{ request('search') }}"
                         placeholder="Cari barang..."
-                        class="w-full md:w-64 px-4 py-2 text-sm rounded-lg border border-gray-300 dark:border-gray-700 
-                   bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 
-                   placeholder-gray-400 dark:placeholder-gray-500 
+                        class="w-full md:w-64 px-4 py-2 text-sm rounded-lg border border-gray-300 dark:border-gray-700
+                   bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200
+                   placeholder-gray-400 dark:placeholder-gray-500
                    focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 transition">
                     <svg class="absolute right-3 top-2 size-5 text-gray-400 dark:text-gray-500"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

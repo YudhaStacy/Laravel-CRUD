@@ -11,13 +11,16 @@
 </head>
 
 <body class="bg-[#fafafa] dark:bg-[#05060b] text-gray-900 dark:text-white">
-    @include('partials.navbar')
+
+    @if (!isset($withNavbar) || $withNavbar)
+        @include('partials.navbar')
+    @endif
 
     @if (session('success'))
         <div id="toast-success"
             class="fixed top-5 right-5 z-50 translate-x-20 opacity-1 transition-all duration-500 ease-out">
             <div
-                class="flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg 
+                class="flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg
             bg-green-600 dark:bg-green-900 text-white border border-green-400 dark:border-green-700">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -38,8 +41,8 @@
     </main>
 
     <button onclick="toggleDarkMode()"
-        class="fixed bottom-5 right-5 z-50 p-3 rounded-full shadow-lg bg-white dark:bg-gray-800 
-           border border-gray-300 dark:border-gray-700 hover:scale-105 hover:shadow-xl 
+        class="fixed bottom-5 right-5 z-50 p-3 rounded-full shadow-lg bg-white dark:bg-gray-800
+           border border-gray-300 dark:border-gray-700 hover:scale-105 hover:shadow-xl
            transition-all duration-300 ease-out">
         <svg id="icon-light" class="w-5 h-5 text-black dark:hidden" xmlns="http://www.w3.org/2000/svg" width="20"
             height="20" viewBox="0 0 20 20">

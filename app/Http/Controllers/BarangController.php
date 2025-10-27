@@ -6,7 +6,6 @@ use App\Models\Barang;
 use App\Models\Kategori;
 use App\Models\Pemasok;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class BarangController extends Controller
 {

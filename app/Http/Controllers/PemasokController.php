@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Barang;
 use App\Models\Pemasok;
 use Illuminate\Http\Request;
 

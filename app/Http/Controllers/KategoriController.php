@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Barang;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
@@ -64,8 +63,6 @@ class KategoriController extends Controller
     {
         $kategori = Kategori::findOrFail($id);
 
-        $kategori->delete();
-
-        return redirect()->back()->with('success', 'Kategori berhasil dihapus.');
+        $kategori->delete($id);
     }
 }
