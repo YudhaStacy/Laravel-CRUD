@@ -22,7 +22,7 @@
 
                 <div class="mb-2">
                     <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Total Barang</h3>
-                    <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ $totalBarang ?? 24 }}</p>
+                    <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ $totalBarang }}</p>
                 </div>
 
                 <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
@@ -50,7 +50,7 @@
 
                 <div class="mb-2">
                     <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Total Kategori</h3>
-                    <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ $totalKategori ?? 8 }}</p>
+                    <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ $totalKategori }}</p>
                 </div>
 
                 <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
@@ -78,7 +78,7 @@
 
                 <div class="mb-2">
                     <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Total Pemasok</h3>
-                    <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ $totalPemasok ?? 12 }}</p>
+                    <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ $totalPemasok }}</p>
                 </div>
 
                 <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
