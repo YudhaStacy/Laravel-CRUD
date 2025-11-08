@@ -24,7 +24,7 @@
                     </button>
 
                     <el-menu anchor="bottom end" popover
-                        class="origin-top-right rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
+                        class="m-0 w-30 origin-top-right rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
        shadow-lg transition data-closed:scale-95 data-closed:opacity-0 data-enter:duration-100 data-leave:duration-75">
                         <div class="py-1">
                             @foreach ([6, 24, 48, 100] as $limit)
@@ -45,7 +45,7 @@
                     </el-menu>
                 </el-dropdown>
 
-                <el-dropdown class="inline-block">
+                {{-- <el-dropdown class="inline-block">
                     <button
                         class="inline-flex w-full justify-center gap-x-1.5 rounded-lg bg-white dark:bg-gray-900
                    border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium
@@ -59,7 +59,7 @@
                     </button>
 
                     <el-menu anchor="bottom end" popover
-                        class=" origin-top-right rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
+                        class="m-0 w-44 origin-top-right rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
                    shadow-lg transition data-closed:scale-95 data-closed:opacity-0 data-enter:duration-100 data-leave:duration-75">
                         <div class="py-1">
                             <a href="{{ route('barang.index', array_filter(['search' => request('search')])) }}"
@@ -75,7 +75,7 @@
                             @endforeach
                         </div>
                     </el-menu>
-                </el-dropdown>
+                </el-dropdown> --}}
 
                 <form method="GET" action="{{ route('barang.index') }}" class="relative">
                     <input type="hidden" name="kategori" value="{{ request('kategori') }}">
@@ -91,6 +91,12 @@
                             d="M21 21l-4.35-4.35M17 10.5A6.5 6.5 0 1 1 10.5 4a6.5 6.5 0 0 1 6.5 6.5Z" />
                     </svg>
                 </form>
+
+                <a href="{{ route('barang.form') }}"
+                    class="inline-flex justify-center gap-x-1.5 rounded-lg bg-black dark:bg-gray-700
+        px-4 py-2 text-sm font-medium
+       text-white dark:text-gray-200 hover:bg-gray-800 dark:hover:bg-gray-800 transition-colors">Tambah
+                    Data</a>
             </div>
         </div>
     </div>

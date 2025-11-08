@@ -56,6 +56,11 @@
                             d="M21 21l-4.35-4.35M17 10.5A6.5 6.5 0 1 1 10.5 4a6.5 6.5 0 0 1 6.5 6.5Z" />
                     </svg>
                 </form>
+                <a href="{{ route('pemasok.form') }}"
+                    class="inline-flex justify-center gap-x-1.5 rounded-lg bg-black dark:bg-gray-700
+        px-4 py-2 text-sm font-medium
+       text-white dark:text-gray-200 hover:bg-gray-800 dark:hover:bg-gray-800 transition-colors">Tambah
+                    Data</a>
             </div>
         </div>
     </div>

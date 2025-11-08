@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
-@import "tailwindcss";
 
-/* darkmode */
-@custom-variant dark (&:where(.dark, .dark *));
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
-@theme {
-    --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
